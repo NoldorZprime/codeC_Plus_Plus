@@ -1,0 +1,125 @@
+---
+title: Modificadores de tipos
+description: Aprende todo sobre las variables en C++ su declaración, inicialización y formas avanzadas de uso.
+---
+
+En C++, los **modificadores de tipos** permiten alterar las propiedades de los tipos de datos básicos para controlar el rango de valores que pueden almacenar y la forma en que se manejan en memoria. Estos modificadores ayudan a optimizar el uso de recursos y definir con mayor precisión las variables en un programa.
+
+## 1. ¿Qué son los Modificadores de Tipos?
+Los modificadores de tipos en C++ se utilizan para cambiar las características de los tipos de datos primitivos como `int`, `char` y `double`. Existen cuatro modificadores principales:
+
+- `signed`
+- `unsigned`
+- `short`
+- `long`
+
+Estos modificadores afectan la cantidad de memoria utilizada y la interpretación de los valores numéricos almacenados en la variable.
+
+## 2. Modificadores de Signo (`signed` y `unsigned`)
+
+El modificador **`signed`** indica que la variable puede almacenar tanto valores positivos como negativos, mientras que **`unsigned`** solo permite valores positivos, duplicando el rango de valores positivos disponibles.
+
+**Ejemplo**
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    signed int a = -10;
+    unsigned int b = 10;
+
+    cout << "Valor de a: " << a << endl;
+    cout << "Valor de b: " << b << endl;
+
+    return 0;
+}
+```
+**Diferencia de rangos:**
+
+| Tipo de dato       | Rango aproximado (32 bits) |
+|--------------------|--------------------------|
+| `signed int`      | -2,147,483,648 a 2,147,483,647 |
+| `unsigned int`    | 0 a 4,294,967,295 |
+
+
+## 3. Combinación de Modificadores
+
+Los modificadores pueden combinarse para definir variables con mayor precisión:
+```cpp
+unsigned short int edad = 25;
+long long int poblacionMundial = 7800000000;
+```
+Estas combinaciones permiten definir variables optimizadas para cada situación específica.
+
+## **Obtener los rangos de cada tipo de dato**
+
+En C++, puedes determinar el **rango mínimo y máximo** de los tipos de datos primitivos utilizando la biblioteca `<limits>`, que proporciona la clase `std::numeric_limits`. Esta clase permite acceder a información como los valores mínimos y máximos de cada tipo de dato.  
+
+```cpp
+#include <iostream>
+#include <limits>
+
+using namespace std;
+
+int main(){
+    std::cout << "Rangos de los tipos de datos en C++:\n\n";
+
+    std::cout << "int:\n";
+    std::cout << "  Mínimo: " << std::numeric_limits<int>::min() << "\n";
+    std::cout << "  Máximo: " << std::numeric_limits<int>::max() << "\n\n";
+
+    std::cout << "unsigned int:\n";
+    std::cout << "  Mínimo: " << std::numeric_limits<unsigned int>::min() << "\n";
+    std::cout << "  Máximo: " << std::numeric_limits<unsigned int>::max() << "\n\n";
+
+    std::cout << "signed int:\n";
+    std::cout << "  Mínimo: " << std::numeric_limits<signed int>::min() << "\n";
+    std::cout << "  Máximo: " << std::numeric_limits<signed int>::max() << "\n\n";
+
+    std::cout << "short:\n";
+    std::cout << "  Mínimo: " << std::numeric_limits<short>::min() << "\n";
+    std::cout << "  Máximo: " << std::numeric_limits<short>::max() << "\n\n";
+
+    std::cout << "long:\n";
+    std::cout << "  Mínimo: " << std::numeric_limits<long>::min() << "\n";
+    std::cout << "  Máximo: " << std::numeric_limits<long>::max() << "\n\n";
+
+    std::cout << "long long:\n";
+    std::cout << "  Mínimo: " << std::numeric_limits<long long>::min() << "\n";
+    std::cout << "  Máximo: " << std::numeric_limits<long long>::max() << "\n\n";
+
+    std::cout << "float:\n";
+    std::cout << "  Mínimo: " << std::numeric_limits<float>::min() << "\n";
+    std::cout << "  Máximo: " << std::numeric_limits<float>::max() << "\n\n";
+
+    std::cout << "double:\n";
+    std::cout << "  Mínimo: " << std::numeric_limits<double>::min() << "\n";
+    std::cout << "  Máximo: " << std::numeric_limits<double>::max() << "\n\n";
+    
+    std::cout << "long double:\n";
+    std::cout << "  Mínimo: " << std::numeric_limits<long double>::min() << "\n";
+    std::cout << "  Máximo: " << std::numeric_limits<long double>::max() << "\n\n";
+
+    std::cout << "char:\n";
+    std::cout << "  Mínimo: " << static_cast<int>(std::numeric_limits<char>::min()) << "\n";
+    std::cout << "  Máximo: " << static_cast<int>(std::numeric_limits<char>::max()) << "\n\n";
+
+    std::cout << "wchar_t:\n";
+    std::cout << "  Mínimo: " << static_cast<int>(std::numeric_limits<wchar_t>::min()) << "\n";
+    std::cout << "  Máximo: " << static_cast<int>(std::numeric_limits<wchar_t>::max()) << "\n\n";
+
+    std::cout << "bool:\n";
+    std::cout << "  Falso: " << false << "\n";
+    std::cout << "  Verdadero: " << true << "\n\n";
+
+    return 0;
+}
+
+```
+
+### Explicación del Código
+1. **`#include <limits>`**: Importa la biblioteca necesaria para acceder a `std::numeric_limits`.
+2. **`std::numeric_limits<T>::min()`**: Devuelve el valor mínimo que puede almacenar un tipo de dato `T`.
+3. **`std::numeric_limits<T>::max()`**: Devuelve el valor máximo que puede almacenar un tipo de dato `T`.
+4. **Para `char`**: Se convierte el resultado a `int`, ya que `char` se representa como un número ASCII.

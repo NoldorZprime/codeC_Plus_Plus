@@ -1,0 +1,88 @@
+---
+title: Goto
+description: A reference page in my new Starlight docs site.
+---
+
+# Uso de la sentencia goto en C++
+
+La sentencia `goto` en C++ permite realizar saltos incondicionales dentro de un programa. Aunque su uso no es recomendado en la mayoría de los casos debido a los problemas de legibilidad y mantenimiento del código, puede ser útil en ciertas situaciones específicas.
+
+## Sintaxis de goto
+
+```cpp
+goto etiqueta;
+// Código intermedio (puede no ejecutarse si goto se usa antes)
+etiqueta:
+// Código al que se salta
+```
+
+## Ejemplo básico de goto
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Inicio del programa" << endl;
+    
+    goto salto; // Salto a la etiqueta 'salto'
+    
+    cout << "Esta línea no se ejecutará" << endl;
+    
+    salto:
+    cout << "Se ha saltado una línea" << endl;
+    
+    return 0;
+}
+```
+
+### Explicación:
+- El programa imprime "Inicio del programa".
+- Luego, `goto salto;` salta directamente a la etiqueta `salto`, omitiendo la línea intermedia.
+- Se imprime "Se ha saltado una línea".
+
+## Uso de goto en bucles
+
+Aunque no es una práctica recomendada, `goto` puede utilizarse para salir de múltiples bucles anidados.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 3; i++) {
+        for (int j = 1; j <= 3; j++) {
+            if (i == 2 && j == 2) {
+                goto salir; // Rompe ambos bucles
+            }
+            cout << "i: " << i << ", j: " << j << endl;
+        }
+    }
+    salir:
+    cout << "Se ha salido de los bucles." << endl;
+    return 0;
+}
+```
+
+### Salida esperada:
+```
+i: 1, j: 1
+i: 1, j: 2
+i: 1, j: 3
+i: 2, j: 1
+Se ha salido de los bucles.
+```
+
+### Explicación:
+- Se imprimen los valores de `i` y `j` normalmente.
+- Cuando `i == 2` y `j == 2`, se ejecuta `goto salir;` y se rompe la ejecución de ambos bucles.
+
+## Cuándo evitar goto
+El uso de `goto` puede hacer que el código sea difícil de seguir y depurar. En su lugar, se recomienda utilizar estructuras de control como:
+- `break` y `continue` para manejar bucles.
+- `return` para salir de funciones.
+- `switch-case` en lugar de múltiples `if-else` con `goto`.
+
+## Conclusión
+El uso de `goto` en C++ es una herramienta que permite realizar saltos incondicionales en un programa, aunque su uso debe limitarse a casos en los que sea realmente necesario. Es preferible utilizar estructuras de control más legibles para mejorar la claridad y el mantenimiento del código.
+

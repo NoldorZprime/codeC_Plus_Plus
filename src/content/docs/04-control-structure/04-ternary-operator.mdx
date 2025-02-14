@@ -1,0 +1,120 @@
+---
+title: Operador ternario
+description: A reference page in my new Starlight docs site.
+---
+
+El operador ternario (`?:`) en C++ es una forma concisa de escribir expresiones condicionales, permitiendo evaluar una condición en una sola línea de código. Su uso mejora la legibilidad y reduce la cantidad de código necesario para asignaciones o decisiones simples.
+
+## Sintaxis del Operador Ternario
+
+```cpp
+condición ? expresión_si_verdadero : expresión_si_falso;
+```
+
+- **`condición`**: Expresión que se evalúa como `true` o `false`.
+- **`expresión_si_verdadero`**: Se ejecuta si la condición es `true`.
+- **`expresión_si_falso`**: Se ejecuta si la condición es `false`.
+
+## Ejemplo Básico
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero;
+    cout << "Ingrese un número: ";
+    cin >> numero;
+    
+    string resultado = (numero % 2 == 0) ? "Par" : "Impar";
+    cout << "El número es " << resultado << endl;
+    
+    return 0;
+}
+```
+
+En este ejemplo:
+- Si `numero` es divisible por 2, la variable `resultado` recibe el valor "Par".
+- Si no lo es, recibe el valor "Impar".
+
+## Uso del Operador Ternario en Asignaciones
+
+El operador ternario se usa comúnmente para realizar asignaciones condicionales de manera compacta.
+
+### Ejemplo con Múltiples Valores
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 10, b = 20;
+    int mayor = (a > b) ? a : b;
+    cout << "El mayor es: " << mayor << endl;
+    return 0;
+}
+```
+
+Aquí, si `a` es mayor que `b`, la variable `mayor` toma el valor de `a`; de lo contrario, toma el valor de `b`.
+
+## Uso en Funciones con Retorno Condicional
+
+El operador ternario también se puede utilizar para retornar valores en funciones.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+char evaluarNota(int nota) {
+    return (nota >= 60) ? 'A' : 'R';
+}
+
+int main() {
+    int nota;
+    cout << "Ingrese su calificación: ";
+    cin >> nota;
+    cout << "Resultado: " << evaluarNota(nota) << endl;
+    return 0;
+}
+```
+
+## Encadenamiento del Operador Ternario
+
+Se pueden encadenar múltiples operadores ternarios para evaluar más condiciones en una sola expresión.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int edad;
+    cout << "Ingrese su edad: ";
+    cin >> edad;
+    
+    string categoria = (edad < 12) ? "Niño" : (edad < 18) ? "Adolescente" : "Adulto";
+    cout << "Categoría: " << categoria << endl;
+    
+    return 0;
+}
+```
+
+Aquí:
+- Si `edad` es menor a 12, la categoría es "Niño".
+- Si es menor a 18 pero mayor o igual a 12, es "Adolescente".
+- En cualquier otro caso, es "Adulto".
+
+## Ventajas y Desventajas
+
+### **Ventajas:**
+✔ Reduce líneas de código en comparaciones simples.
+✔ Mejora la legibilidad en casos simples.
+✔ Puede usarse dentro de expresiones y asignaciones.
+
+### **Desventajas:**
+✖ Puede reducir la claridad cuando se anidan múltiples operadores ternarios.
+✖ No es recomendable para operaciones complejas o con múltiples instrucciones.
+
+## Conclusión
+
+El operador ternario en C++ es una herramienta poderosa para simplificar código cuando se requieren decisiones simples. Sin embargo, debe usarse con moderación para evitar disminuir la claridad del código en casos más complejos.
+

@@ -1,0 +1,112 @@
+---
+title: While
+description: A reference page in my new Starlight docs site.
+---
+
+# Ciclo while en C++
+
+El ciclo `while` en C++ es una estructura de control de flujo que permite repetir un bloque de código mientras una condición sea verdadera. Es útil cuando no se conoce de antemano cuántas veces se debe repetir la ejecución de las instrucciones.
+
+## Sintaxis del while
+
+```cpp
+while (condición) {
+    // Código a ejecutar mientras la condición sea verdadera
+}
+```
+
+- **`condición`**: Es una expresión que se evalúa antes de cada iteración.
+- Si la condición es `true`, el bloque de código dentro del `while` se ejecuta.
+- Si la condición es `false`, el ciclo termina y el programa continúa con la siguiente instrucción después del `while`.
+
+## Ejemplo básico
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int contador = 1;
+    
+    while (contador <= 5) {
+        cout << "Iteración número: " << contador << endl;
+        contador++; // Incrementamos el contador
+    }
+    
+    return 0;
+}
+```
+
+### Explicación:
+- Se inicializa `contador` en 1.
+- Mientras `contador` sea menor o igual a 5, el bucle imprime el número de iteración.
+- En cada repetición, se incrementa `contador` en 1 hasta que la condición sea falsa.
+
+## Uso de while con entrada del usuario
+
+El `while` se puede utilizar para validar entradas del usuario.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero;
+    cout << "Ingrese un número positivo: ";
+    cin >> numero;
+    
+    while (numero < 0) {
+        cout << "Número inválido. Intente de nuevo: ";
+        cin >> numero;
+    }
+    
+    cout << "Número aceptado: " << numero << endl;
+    return 0;
+}
+```
+
+Aquí, el bucle se repite hasta que el usuario ingrese un número positivo.
+
+## Bucle while infinito
+
+Si la condición siempre es `true`, el ciclo no termina a menos que haya una instrucción de salida explícita como `break`.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    while (true) {
+        cout << "Este es un bucle infinito." << endl;
+        break; // Salir del bucle
+    }
+    return 0;
+}
+```
+
+El `break` detiene el ciclo para evitar una ejecución sin fin.
+
+## Comparación con do-while
+
+A diferencia de `while`, el ciclo `do-while` garantiza que el bloque de código se ejecuta al menos una vez.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero;
+    do {
+        cout << "Ingrese un número mayor a 10: ";
+        cin >> numero;
+    } while (numero <= 10);
+    
+    cout << "Número válido." << endl;
+    return 0;
+}
+```
+
+## Conclusión
+
+El `while` en C++ es una herramienta poderosa para repetir código basado en una condición. Es ideal cuando no se conoce la cantidad exacta de iteraciones y se necesita evaluar una condición antes de ejecutar el bloque de instrucciones. Sin embargo, hay que tener cuidado con bucles infinitos asegurando que la condición eventualmente se vuelva `false`.
+

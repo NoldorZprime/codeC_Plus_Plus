@@ -1,0 +1,128 @@
+---
+title: Tipos de datos
+description: Aprende todo sobre las variables en C++ su declaración, inicialización y formas avanzadas de uso.
+---
+Los **tipos de datos** son categorías que definen la naturaleza de los valores que pueden almacenarse y manipularse en un programa. Cada tipo de dato tiene características específicas y operaciones asociadas.
+
+## Tipos de Datos Primitivos
+
+En C++, los **tipos de datos primitivos** son la base para la manipulación de información en un programa. Estos tipos representan valores simples y son proporcionados directamente por el lenguaje. Son esenciales para definir variables, realizar operaciones y almacenar datos de manera eficiente.
+
+## 1. **Tipos de Datos Enteros**
+Los tipos de datos enteros representan números sin decimales. Pueden ser con signo (positivos y negativos) o sin signo (solo positivos).
+
+### a) `int`
+- **Descripción**: Almacena números enteros con signo.
+- **Tamaño**: Generalmente 4 bytes (32 bits).
+- **Rango**: `-2,147,483,648` a `2,147,483,647`.
+- **Ejemplo**:
+  ```cpp
+  int edad = 25;
+  ```
+
+### b) `short`
+- **Descripción**: Almacena números enteros con signo, pero con un rango menor que `int`.
+- **Tamaño**: Generalmente 2 bytes (16 bits).
+- **Rango**: `-32,768` a `32,767`.
+- **Ejemplo**:
+  ```cpp
+  short cantidad = 100;
+  ```
+
+### c) `long`
+- **Descripción**: Almacena números enteros con signo, con un rango mayor que `int`.
+- **Tamaño**: Generalmente 4 u 8 bytes (depende del sistema).
+- **Rango**: `-2,147,483,648` a `2,147,483,647` (4 bytes) o mucho mayor (8 bytes).
+- **Ejemplo**:
+  ```cpp
+  long poblacion = 8000000000L;
+  ```
+
+### d) `long long`
+- **Descripción**: Almacena números enteros con signo y un rango aún mayor.
+- **Tamaño**: Generalmente 8 bytes (64 bits).
+- **Rango**: `-9,223,372,036,854,775,808` a `9,223,372,036,854,775,807`.
+- **Ejemplo**:
+  ```cpp
+  long long distancia = 9223372036854775807LL;
+  ```
+
+## 2. **Tipos de Datos de Punto Flotante**
+Los tipos de datos de punto flotante representan números reales (con decimales).
+
+### a) `float`
+- **Descripción**: Almacena números de punto flotante con precisión simple.
+- **Tamaño**: Generalmente 4 bytes (32 bits).
+- **Rango**: Aproximadamente `±3.4e-38` a `±3.4e38`.
+- **Ejemplo**:
+  ```cpp
+  float pi = 3.1416f;
+  ```
+
+### b) `double`
+- **Descripción**: Almacena números de punto flotante con precisión doble.
+- **Tamaño**: Generalmente 8 bytes (64 bits).
+- **Rango**: Aproximadamente `±1.7e-308` a `±1.7e308`.
+- **Ejemplo**:
+  ```cpp
+  double distancia = 123.456789;
+  ```
+
+### c) `long double`
+- **Descripción**: Almacena números de punto flotante con mayor precisión que `double`.
+- **Tamaño**: Generalmente 10 bytes (80 bits) o más.
+- **Rango**: Mayor que `double`.
+- **Ejemplo**:
+  ```cpp
+  long double valor = 123456.789012345L;
+  ```
+
+## 3. **Tipos de Datos de Carácter**
+Representan caracteres individuales.
+
+### a) `char`
+- **Descripción**: Almacena un carácter o un número pequeño.
+- **Tamaño**: 1 byte (8 bits).
+- **Rango**: `-128` a `127` (con signo) o `0` a `255` (sin signo).
+- **Ejemplo**:
+  ```cpp
+  char letra = 'A';
+  ```
+
+### c) `wchar_t`
+- **Descripción**: Almacena caracteres anchos, útiles para representar caracteres Unicode o conjuntos de caracteres extendidos.
+- **Tamaño**: Depende del sistema (generalmente 2 o 4 bytes).
+- **Rango**: Depende del tamaño (por ejemplo, 2 bytes permiten `0` a `65,535`).
+- **Ejemplo**:
+  ```cpp
+  wchar_t caracterAncho = L'ñ';
+  ```
+
+## 4. **Tipo de Dato Booleano**
+Representa valores lógicos.
+
+### a) `bool`
+- **Descripción**: Almacena valores booleanos: `true` (verdadero) o `false` (falso).
+- **Tamaño**: Generalmente 1 byte.
+- **Ejemplo**:
+  ```cpp
+  bool esValido = true;
+  ```
+
+## Resumen de Tipos Primitivos en C++
+
+| Tipo de Dato      | Descripción                          | Tamaño (bytes) | Rango o Valores                     |
+|-------------------|--------------------------------------|----------------|-------------------------------------|
+| `int`             | Entero con signo                     | 4              | `-2,147,483,648` a `2,147,483,647`  |
+| `short`           | Entero corto con signo               | 2              | `-32,768` a `32,767`                |
+| `long`            | Entero largo con signo               | 4 u 8          | Depende del sistema                 |
+| `long long`       | Entero muy largo con signo           | 8              | `-9,223,372,036,854,775,808` a `9,223,372,036,854,775,807` |
+| `float`           | Punto flotante de precisión simple   | 4              | `±3.4e-38` a `±3.4e38`              |
+| `double`          | Punto flotante de precisión doble    | 8              | `±1.7e-308` a `±1.7e308`            |
+| `long double`     | Punto flotante de mayor precisión    | 10 o más       | Mayor que `double`                  |
+| `char`            | Carácter o número pequeño            | 1              | `-128` a `127` o `0` a `255`        |
+| `wchar_t`         | Carácter ancho (Unicode)             | 2 o 4          | Depende del sistema                 |
+| `bool`            | Valor booleano                       | 1              | `true` o `false`                    |
+
+## Conclusión
+Los tipos de datos primitivos en C++ son fundamentales para la programación, ya que permiten almacenar y manipular información de manera eficiente. Cada tipo tiene un propósito específico y un rango de valores asociado, lo que facilita la elección del tipo adecuado según las necesidades del programa. El tipo `wchar_t` es especialmente útil para aplicaciones que requieren soporte para caracteres Unicode o conjuntos de caracteres extendidos. Dominar estos tipos es esencial para escribir código robusto y optimizado en C++.

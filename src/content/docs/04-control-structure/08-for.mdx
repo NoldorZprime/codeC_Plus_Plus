@@ -1,0 +1,114 @@
+---
+title: For
+description: A reference page in my new Starlight docs site.
+---
+
+# Bucle for en C++
+
+El bucle `for` en C++ es una estructura de control que permite repetir un bloque de código un número determinado de veces. Es ideal cuando conocemos de antemano cuántas iteraciones se deben realizar.
+
+## Sintaxis del for
+
+```cpp
+for (inicialización; condición; actualización) {
+    // Código a ejecutar en cada iteración
+}
+```
+
+### Elementos del bucle for:
+1. **Inicialización**: Se ejecuta una sola vez antes de que comience el bucle. Generalmente, se usa para definir e inicializar una variable de control.
+2. **Condición**: Se evalúa antes de cada iteración. Si es `true`, se ejecuta el bloque de código; si es `false`, el bucle termina.
+3. **Actualización**: Se ejecuta al final de cada iteración y generalmente modifica la variable de control.
+
+## Ejemplo básico
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        cout << "Iteración número: " << i << endl;
+    }
+    return 0;
+}
+```
+
+### Explicación:
+- `i` se inicializa en `1`.
+- Mientras `i <= 5`, el bucle se ejecuta.
+- En cada iteración, `i` se incrementa (`i++`).
+- Cuando `i` es mayor que `5`, el bucle finaliza.
+
+## Variantes del bucle for
+
+### Bucle con decremento
+
+```cpp
+for (int i = 5; i > 0; i--) {
+    cout << "Cuenta regresiva: " << i << endl;
+}
+```
+
+### For sin inicialización
+
+Si la variable de control se ha declarado antes, no es necesario inicializarla dentro del `for`.
+
+```cpp
+int i = 1;
+for (; i <= 5; i++) {
+    cout << "Iteración: " << i << endl;
+}
+```
+
+### For sin condición
+
+```cpp
+for (int i = 1; ; i++) {
+    if (i > 5) break; // Salir del bucle manualmente
+    cout << "Iteración: " << i << endl;
+}
+```
+
+### For sin actualización
+
+```cpp
+for (int i = 1; i <= 5;) {
+    cout << "Iteración: " << i << endl;
+    i++; // Actualización dentro del bloque
+}
+```
+
+### For infinito
+
+```cpp
+for (;;) {
+    cout << "Bucle infinito" << endl;
+    break; // Para evitar un ciclo sin fin
+}
+```
+
+## Uso de for con arrays
+
+El bucle `for` es útil para recorrer arreglos.
+
+```cpp
+int numeros[] = {10, 20, 30, 40, 50};
+for (int i = 0; i < 5; i++) {
+    cout << "Elemento " << i << ": " << numeros[i] << endl;
+}
+```
+
+## Uso de for con range-based loop (C++11 en adelante)
+
+```cpp
+int numeros[] = {10, 20, 30, 40, 50};
+for (int num : numeros) {
+    cout << "Número: " << num << endl;
+}
+```
+
+## Conclusión
+
+El bucle `for` en C++ es una estructura versátil que permite ejecutar un bloque de código repetidamente con un control preciso sobre las iteraciones. Su uso adecuado mejora la legibilidad y eficiencia del código.
+

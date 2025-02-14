@@ -1,0 +1,93 @@
+---
+title: Variables
+description: Aprende todo sobre las variables en C++ su declaración, inicialización y formas avanzadas de uso.
+---
+
+Una **variable** es un elemento fundamental en la programación que permite almacenar y gestionar datos dentro de un programa. Se puede considerar como un "contenedor" en la memoria del ordenador donde se guarda un valor que puede cambiar a lo largo de la ejecución del programa.
+
+**Importancia de las Variables**
+
+Las variables son esenciales en la programación porque permiten:
+✅ Almacenar información para su uso posterior.  
+✅ Hacer que los programas sean dinámicos y adaptables.  
+✅ Mejorar la legibilidad y mantenibilidad del código.  
+✅ Reducir la repetición y facilitar la reutilización de datos.  
+
+En resumen, sin variables, los programas serían mucho más rígidos y difíciles de gestionar.
+
+## Sintaxis de una variable
+
+En C++, la declaración de una variable sigue esta estructura:  
+
+```cpp
+tipo_de_dato nombre_variable = valor_inicial;
+```
+
+- `tipo_de_dato`: Especifica el tipo de dato que almacenará la variable (por ejemplo, `int`, `float`, `char`, `bool`, `string`).
+- `nombre_variable`: Es el identificador único de la variable.
+- `valor_inicial` *(opcional)*: Es el valor asignado a la variable al momento de su declaración.
+
+## Declarar una Variable
+
+La **declaración** de una variable consiste en especificar su tipo de dato y su nombre. Esto le indica al compilador o intérprete que se reservará un espacio en memoria para almacenar un valor en el futuro.
+
+**Ejemplo en C++:**
+```cpp
+int edad;
+float temperatura;
+char inicial;
+bool esActivo;
+```
+En este caso:
+- `int edad;` reserva espacio para un número entero.
+- `float temperatura;` reserva espacio para un número decimal.
+- `char inicial;` reserva espacio para un solo carácter.
+- `bool esActivo;` reserva espacio para un valor booleano (`true` o `false`).
+
+## Inicializar una Variable
+
+La **inicialización** de una variable ocurre cuando se le asigna un valor en el momento de su declaración.
+
+**Ejemplo en C++:**
+```cpp
+int edad = 25;
+float temperatura = 36.6;
+char inicial = 'C';
+bool esActivo = true;
+```
+Aquí, cada variable es declarada y se le asigna un valor inicial.
+
+## Cambiar el Valor de una Variable
+
+Una vez declarada e inicializada una variable, su valor puede cambiar en cualquier momento dentro del programa.
+
+**Ejemplo en C++:**
+```cpp
+int edad = 25;
+edad = 30; // Ahora la variable "edad" tiene el valor 30
+```
+Este proceso es útil cuando una variable debe actualizarse según la lógica del programa.
+
+## Declarar Múltiples Variables
+
+Es posible declarar varias variables del mismo tipo en una sola línea, separándolas por comas.
+
+**Ejemplo en C++:**
+```cpp
+int a, b, c;
+float x, y, z;
+char letra1, letra2;
+```
+Esto ahorra espacio y mejora la legibilidad del código cuando se necesitan varias variables del mismo tipo.
+
+## Inicializar Múltiples Variables
+
+Al igual que en la declaración, también es posible inicializar múltiples variables en una sola línea.
+
+**Ejemplo en C++:**
+```cpp
+int a = 10, b = 20, c = 30;
+float x = 1.5, y = 2.5, z = 3.5;
+char letra1 = 'A', letra2 = 'B';
+```
+Esto permite definir varias variables con valores iniciales de forma compacta y organizada.

@@ -1,0 +1,106 @@
+---
+title: If-else
+description: A reference page in my new Starlight docs site.
+---
+
+El uso de `if-else` en C++ permite que un programa tome decisiones basadas en condiciones. Además, los `if` anidados permiten evaluar múltiples condiciones de manera jerárquica, brindando mayor control sobre el flujo de ejecución.
+
+## Sintaxis de if-else
+
+La estructura básica de `if-else` es la siguiente:
+
+```cpp
+if (condición) {
+    // Código si la condición es verdadera
+} else {
+    // Código si la condición es falsa
+}
+```
+
+## Ejemplo Básico de if-else
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero;
+    cout << "Ingrese un número: ";
+    cin >> numero;
+    
+    if (numero > 0) {
+        cout << "El número es positivo." << endl;
+    } else {
+        cout << "El número no es positivo." << endl;
+    }
+    
+    return 0;
+}
+```
+
+En este ejemplo, si el número ingresado es mayor que 0, se imprime "El número es positivo"; de lo contrario, se ejecuta el bloque dentro del `else`.
+
+## Uso de if-else-if para Múltiples Condiciones
+
+Cuando hay más de dos casos posibles, se puede utilizar `if-else-if`.
+
+### Ejemplo:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int nota;
+    cout << "Ingrese su calificación: ";
+    cin >> nota;
+    
+    if (nota >= 90) {
+        cout << "Excelente." << endl;
+    } else if (nota >= 70) {
+        cout << "Aprobado." << endl;
+    } else {
+        cout << "Reprobado." << endl;
+    }
+    
+    return 0;
+}
+```
+
+Aquí, el programa evalúa en orden las condiciones y ejecuta el bloque de código correspondiente a la primera condición verdadera.
+
+## Uso de if Anidados
+
+Los `if` anidados permiten evaluar condiciones dentro de otras condiciones, proporcionando una estructura más compleja.
+
+### Ejemplo de if anidado:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int edad;
+    cout << "Ingrese su edad: ";
+    cin >> edad;
+    
+    if (edad >= 18) {
+        if (edad >= 65) {
+            cout << "Usted es un adulto mayor." << endl;
+        } else {
+            cout << "Usted es un adulto." << endl;
+        }
+    } else {
+        cout << "Usted es menor de edad." << endl;
+    }
+    
+    return 0;
+}
+```
+
+En este caso, si la edad es mayor o igual a 18, se evalúa una segunda condición dentro del `if`. Si es mayor o igual a 65, se clasifica como adulto mayor; en caso contrario, como adulto.
+
+## Conclusión
+
+El uso de `if-else` y `if` anidados en C++ permite crear programas más dinámicos y adaptables a diferentes situaciones. Con estas estructuras, se pueden evaluar múltiples condiciones y tomar decisiones en función de los datos de entrada.
+

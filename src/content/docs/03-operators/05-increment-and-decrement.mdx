@@ -1,0 +1,75 @@
+---
+title: O. de incremento y decremento
+description: A reference page in my new Starlight docs site.
+---
+
+Los operadores de incremento y decremento son herramientas fundamentales en la programación, especialmente cuando se trabaja con bucles y contadores. Estos operadores permiten aumentar o disminuir el valor de una variable de manera eficiente.
+
+## ¿Qué son los Operadores de Incremento y Decremento?
+
+Son operadores unarios que modifican el valor de una variable numérica. Existen dos tipos principales:
+
+- **Operador de incremento (`++`)**: Aumenta el valor de la variable en 1.
+- **Operador de decremento (`--`)**: Disminuye el valor de la variable en 1.
+
+## Tipos de Incremento y Decremento
+
+### 1. **Incremento (`++`)**
+   - **Forma prefija (`++var`)**: Incrementa la variable antes de ser utilizada en la expresión.
+   - **Forma posfija (`var++`)**: Utiliza la variable en la expresión y luego la incrementa.
+
+   **Ejemplo en C:**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int x = 5;
+       printf("%d\n", ++x); // 6 (incremento antes de imprimir)
+       printf("%d\n", x++); // 6 (imprime y luego incrementa)
+       printf("%d\n", x);   // 7
+       return 0;
+   }
+   ```
+
+### 2. **Decremento (`--`)**
+   - **Forma prefija (`--var`)**: Disminuye la variable antes de ser utilizada.
+   - **Forma posfija (`var--`)**: Utiliza la variable en la expresión y luego la disminuye.
+
+   **Ejemplo en Java:**
+   ```java
+   public class Main {
+       public static void main(String[] args) {
+           int y = 10;
+           System.out.println(--y); // 9 (decremento antes de imprimir)
+           System.out.println(y--); // 9 (imprime y luego decrementa)
+           System.out.println(y);   // 8
+       }
+   }
+   ```
+
+## Uso Común de Estos Operadores
+
+Los operadores de incremento y decremento se utilizan frecuentemente en:
+
+1. **Bucles**
+   ```javascript
+   for (let i = 0; i < 5; i++) {
+       console.log(i);
+   }
+   ```
+
+2. **Contadores**
+   ```python
+   count = 0
+   count += 1  # Equivalente a count++ en otros lenguajes
+   ```
+
+3. **Optimización de código**
+   ```c++
+   int a = 5;
+   a++; // En lugar de escribir a = a + 1;
+   ```
+
+## Conclusión
+
+Los operadores de incremento y decremento son esenciales para la manipulación de variables numéricas en distintos lenguajes de programación. Su correcto uso puede mejorar la eficiencia y claridad del código, especialmente en estructuras repetitivas y algoritmos matemáticos.
+

@@ -1,0 +1,121 @@
+---
+title: Mostrar datos
+description: A reference page in my new Starlight docs site.
+---
+
+En C++, es fundamental comprender cómo manejar tanto los datos como los caracteres especiales al momento de mostrarlos en la salida estándar (normalmente la consola). A continuación, exploraremos cómo manejar tanto la impresión de datos simples (como enteros, flotantes y cadenas) como de caracteres especiales (como saltos de línea, tabulaciones, comillas, etc.).
+
+### 1. Mostrar Datos Simples
+
+En C++, podemos usar el operador de inserción `<<` junto con `std::cout` para imprimir diferentes tipos de datos. Este operador permite mostrar datos de tipo entero, flotante, cadenas de texto, entre otros.
+
+#### Ejemplo con enteros y flotantes:
+
+```cpp
+#include <iostream>
+
+int main() {
+    int numero = 10;
+    float decimal = 3.14;
+
+    std::cout << "Número entero: " << numero << std::endl;
+    std::cout << "Número flotante: " << decimal << std::endl;
+
+    return 0;
+}
+```
+
+#### Salida:
+
+```
+Número entero: 10
+Número flotante: 3.14
+```
+
+En este caso, `std::endl` se utiliza para insertar un salto de línea al final de la salida.
+
+#### Ejemplo con cadenas de texto:
+
+```cpp
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string mensaje = "Hola, mundo!";
+    std::cout << "Mensaje: " << mensaje << std::endl;
+
+    return 0;
+}
+```
+
+#### Salida:
+
+```
+Mensaje: Hola, mundo!
+```
+
+### 2. Mostrar Caracteres Especiales
+
+C++ también nos permite mostrar caracteres especiales mediante secuencias de escape. Estas secuencias son representaciones que tienen un significado especial dentro de las cadenas.
+
+#### Caracteres comunes en secuencias de escape:
+
+- `\n` – Salto de línea
+- `\t` – Tabulación horizontal
+- `\\` – Barra invertida
+- `\'` – Comilla simple
+- `\"` – Comilla doble
+- `\r` – Retorno de carro
+- `\0` – Carácter nulo (fin de la cadena)
+
+#### Ejemplo con caracteres especiales:
+
+```cpp
+#include <iostream>
+
+int main() {
+    std::cout << "Línea 1\nLínea 2\n";
+    std::cout << "Tabulación\tEjemplo\n";
+    std::cout << "Comilla doble: \"Hola\"\n";
+    std::cout << "Comilla simple: \'Mundo\'\n";
+    std::cout << "Ruta de archivo: C:\\Archivos\\MiArchivo.txt\n";
+
+    return 0;
+}
+```
+
+#### Salida:
+
+```
+Línea 1
+Línea 2
+Tabulación    Ejemplo
+Comilla doble: "Hola"
+Comilla simple: 'Mundo'
+Ruta de archivo: C:\Archivos\MiArchivo.txt
+```
+
+### 3. Manejo de Caracteres Especiales en Cadenas de Texto
+
+Si deseas mostrar una cadena que incluya comillas dobles o simples, necesitarás usar las secuencias de escape para estos caracteres. Esto es especialmente útil cuando se trabaja con cadenas que contienen comillas, como las que podrían ser utilizadas en un archivo JSON o al manejar parámetros en una línea de comandos.
+
+#### Ejemplo con comillas en las cadenas:
+
+```cpp
+#include <iostream>
+
+int main() {
+    std::cout << "Ella dijo: \"Hola, ¿cómo estás?\"\n";
+    std::cout << "Ese es mi libro: 'La aventura del código'\n";
+    
+    return 0;
+}
+```
+
+#### Salida:
+
+```
+Ella dijo: "Hola, ¿cómo estás?"
+Ese es mi libro: 'La aventura del código'
+```
+

@@ -1,0 +1,145 @@
+---
+title: Switch
+description: A reference page in my new Starlight docs site.
+---
+
+# Uso de switch en C++
+
+El `switch` en C++ es una estructura de control que permite seleccionar entre múltiples opciones de manera eficiente. Se utiliza cuando se necesita evaluar una variable o expresión contra distintos valores predefinidos.
+
+## Sintaxis del switch
+
+La estructura básica de un `switch` es la siguiente:
+
+```cpp
+switch (expresión) {
+    case valor1:
+        // Código a ejecutar si expresión == valor1
+        break;
+    case valor2:
+        // Código a ejecutar si expresión == valor2
+        break;
+    default:
+        // Código a ejecutar si ningún caso coincide
+}
+```
+
+### Elementos clave:
+- **`expresión`**: Debe ser una variable de tipo entero o `char`.
+- **`case valor`**: Define un valor específico que, si coincide con la expresión, ejecuta el código correspondiente.
+- **`break`**: Detiene la ejecución dentro del `switch`.
+- **`default`**: Opción opcional que se ejecuta si ninguno de los `case` coincide.
+
+## Ejemplo básico
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int opcion;
+    cout << "Ingrese un número (1-3): ";
+    cin >> opcion;
+
+    switch (opcion) {
+        case 1:
+            cout << "Opción 1 seleccionada." << endl;
+            break;
+        case 2:
+            cout << "Opción 2 seleccionada." << endl;
+            break;
+        case 3:
+            cout << "Opción 3 seleccionada." << endl;
+            break;
+        default:
+            cout << "Opción no válida." << endl;
+    }
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- Si el usuario ingresa `1`, se ejecuta el bloque del `case 1`.
+- Si ingresa `2` o `3`, se ejecutan los bloques correspondientes.
+- Si el número ingresado no está en el rango, se ejecuta el `default`.
+
+## Uso del switch con caracteres
+
+El `switch` también se puede utilizar con valores de tipo `char`.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    char letra;
+    cout << "Ingrese una letra (a, b o c): ";
+    cin >> letra;
+
+    switch (letra) {
+        case 'a':
+            cout << "Seleccionó la letra A." << endl;
+            break;
+        case 'b':
+            cout << "Seleccionó la letra B." << endl;
+            break;
+        case 'c':
+            cout << "Seleccionó la letra C." << endl;
+            break;
+        default:
+            cout << "Letra no reconocida." << endl;
+    }
+
+    return 0;
+}
+```
+
+## Casos sin break
+
+Si se omite el `break`, la ejecución continúa en el siguiente `case`.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int dia = 5;
+    
+    switch (dia) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            cout << "Es un día laboral." << endl;
+            break;
+        case 6:
+        case 7:
+            cout << "Es fin de semana." << endl;
+            break;
+        default:
+            cout << "Día inválido." << endl;
+    }
+
+    return 0;
+}
+```
+
+Aquí, si `dia` es 1, 2, 3, 4 o 5, se imprime "Es un día laboral", mientras que si es 6 o 7, se imprime "Es fin de semana".
+
+## Ventajas y Desventajas del switch
+
+### Ventajas:
+✔ Más eficiente que múltiples `if-else` en ciertos casos.
+✔ Código más legible cuando se tienen muchas opciones.
+✔ Útil para trabajar con valores discretos (`int`, `char`).
+
+### Desventajas:
+✖ No admite expresiones de tipo `float`, `double` o `string`.
+✖ Puede ser menos flexible que `if-else` cuando se requieren comparaciones complejas.
+
+## Conclusión
+
+El `switch` es una herramienta útil en C++ cuando se necesitan evaluar múltiples valores de una variable de manera eficiente. Es especialmente recomendable para situaciones con opciones claramente definidas y discretas.
+

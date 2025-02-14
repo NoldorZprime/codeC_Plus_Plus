@@ -1,0 +1,108 @@
+---
+title: Do-While
+description: A reference page in my new Starlight docs site.
+---
+
+# Bucle do-while en C++
+
+El bucle `do-while` en C++ es una estructura de control de flujo que permite ejecutar un bloque de código al menos una vez, y luego repetirlo mientras una condición sea verdadera. Es útil cuando se necesita garantizar la ejecución inicial del bloque antes de evaluar la condición.
+
+## Sintaxis del do-while
+
+```cpp
+do {
+    // Código a ejecutar al menos una vez
+} while (condición);
+```
+
+### Elementos clave:
+- **`do`**: Indica el inicio del bloque que se ejecutará al menos una vez.
+- **`while (condición);`**: Evalúa la condición después de ejecutar el bloque. Si es `true`, el bucle se repite.
+- **El punto y coma (;) al final del `while` es obligatorio.**
+
+## Ejemplo básico
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int contador = 1;
+    
+    do {
+        cout << "Iteración número: " << contador << endl;
+        contador++;
+    } while (contador <= 5);
+    
+    return 0;
+}
+```
+
+### Explicación:
+- `contador` inicia en 1.
+- El bloque dentro de `do` se ejecuta al menos una vez.
+- Después de cada iteración, se incrementa `contador` y se evalúa la condición.
+- Cuando `contador` supera 5, el bucle termina.
+
+## Diferencia entre while y do-while
+
+El `while` primero evalúa la condición antes de ejecutar el bloque, mientras que `do-while` garantiza al menos una ejecución antes de evaluar la condición.
+
+Ejemplo comparativo:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero = 10;
+    
+    cout << "Bucle while:" << endl;
+    while (numero < 5) {
+        cout << "Este mensaje no se imprimirá." << endl;
+    }
+    
+    cout << "Bucle do-while:" << endl;
+    do {
+        cout << "Este mensaje se imprimirá al menos una vez." << endl;
+    } while (numero < 5);
+    
+    return 0;
+}
+```
+
+## Uso del do-while para validar entrada del usuario
+
+El `do-while` es ideal para asegurar que el usuario ingrese un valor válido.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero;
+    
+    do {
+        cout << "Ingrese un número mayor a 0: ";
+        cin >> numero;
+    } while (numero <= 0);
+    
+    cout << "Número válido ingresado: " << numero << endl;
+    return 0;
+}
+```
+
+## Ventajas y desventajas del do-while
+
+### Ventajas:
+✔ Se asegura de ejecutar el código al menos una vez.
+✔ Útil para validaciones de entrada del usuario.
+✔ Más intuitivo cuando la ejecución inicial es obligatoria.
+
+### Desventajas:
+✖ Puede ejecutar el bloque innecesariamente si la condición ya es falsa desde el inicio.
+✖ No siempre es la mejor opción si la condición debe verificarse antes de ejecutar el bloque.
+
+## Conclusión
+
+El `do-while` en C++ es una herramienta útil cuando se necesita ejecutar un bloque de código al menos una vez antes de evaluar una condición. Es especialmente recomendable en situaciones donde se requiere la validación de datos de entrada o cuando se necesita garantizar una ejecución inicial.

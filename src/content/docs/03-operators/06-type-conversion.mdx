@@ -1,0 +1,80 @@
+---
+title: Conversion de tipos de datos
+description: A reference page in my new Starlight docs site.
+---
+
+La conversión de tipos de datos en C++ es un mecanismo fundamental para transformar un tipo de dato en otro. Esto es esencial para evitar errores de compilación y garantizar que las operaciones entre diferentes tipos se realicen correctamente.
+
+## Tipos de Conversión en C++
+
+Existen dos tipos principales de conversión de tipos en C++:
+
+1. **Conversión Implícita** (Type Promotion)
+2. **Conversión Explícita** (Type Casting)
+
+### 1. Conversión Implícita
+
+La conversión implícita es realizada automáticamente por el compilador cuando un tipo de dato más pequeño se asigna a un tipo de dato más grande, sin pérdida de información.
+
+**Ejemplo:**
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 10;
+    double b = a;  // Conversión implícita de int a double
+    cout << "Valor de b: " << b << endl;
+    return 0;
+}
+```
+
+En este caso, el valor de `a` (int) se convierte automáticamente en `double`.
+
+### 2. Conversión Explícita (Type Casting)
+
+Cuando una conversión puede generar pérdida de datos, es necesario hacerla de forma explícita utilizando el **Type Casting**. C++ ofrece varias formas de conversión explícita:
+
+#### a) Conversión mediante Cast en C
+
+Se realiza colocando el tipo deseado entre paréntesis antes de la variable.
+
+**Ejemplo:**
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    double x = 10.75;
+    int y = (int) x;  // Conversión explícita de double a int
+    cout << "Valor de y: " << y << endl;
+    return 0;
+}
+```
+
+#### b) Conversión con Operadores de Casting de C++
+
+C++ proporciona operadores de casting más seguros y específicos:
+
+- `static_cast<Tipo>`: Para conversiones seguras en tiempo de compilación.
+- `reinterpret_cast<Tipo>`: Para cambiar la interpretación de los bits de un puntero.
+- `const_cast<Tipo>`: Para modificar o eliminar la cualidad `const` de una variable.
+- `dynamic_cast<Tipo>`: Para conversiones en tiempo de ejecución con herencia de clases.
+
+**Ejemplo de `static_cast`:**
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    float pi = 3.14159;
+    int entero = static_cast<int>(pi);  // Convierte float a int
+    cout << "Valor entero de pi: " << entero << endl;
+    return 0;
+}
+```
+
+## Conclusión
+
+La conversión de tipos en C++ es una herramienta poderosa que permite manejar diferentes tipos de datos de manera eficiente. Es importante conocer cuándo usar conversiones implícitas y cuándo aplicar conversiones explícitas para evitar errores y pérdidas de datos en el programa.
+

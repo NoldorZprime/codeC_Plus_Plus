@@ -1,0 +1,85 @@
+---
+title: Estructura básica
+description: Aprende a programar en C++ de forma gratuita con CodeC++ 🚀
+---
+
+# Estructura Básica de un Programa en C++
+
+C++ es un lenguaje de programación ampliamente utilizado en el desarrollo de software por su eficiencia y flexibilidad. Para comprender su funcionamiento, es esencial conocer la estructura básica de un programa en C++.
+
+## 1. Encabezado del Programa
+
+Cada programa en C++ comienza con la inclusión de bibliotecas necesarias mediante `#include`. La más común es `#include <iostream>`, que permite la entrada y salida de datos.
+
+```cpp
+#include <iostream>
+```
+
+## 2. Uso del Espacio de Nombres
+
+Para evitar escribir `std::` antes de cada función de la biblioteca estándar, se usa:
+
+```cpp
+using namespace std;
+```
+
+Esto permite escribir `cout` en lugar de `std::cout` y `cin` en lugar de `std::cin`.
+
+## 3. Función Principal `main()`
+
+El punto de entrada de cualquier programa en C++ es la función `main()`. Su sintaxis es:
+
+```cpp
+int main() {
+    return 0;
+}
+```
+
+- `int` indica que la función devuelve un entero.
+- `return 0;` indica que el programa terminó correctamente.
+
+## 4. Cuerpo del Programa
+
+Dentro de `main()`, se escriben las instrucciones. Por ejemplo, para mostrar un mensaje en la consola:
+
+```cpp
+int main() {
+    cout << "Hola, mundo!" << endl;
+    return 0;
+}
+```
+
+Aquí:
+- `cout` es la salida estándar.
+- `<<` envía el texto a la salida.
+- `endl` inserta un salto de línea.
+
+## 5. Comentarios en C++
+
+Los comentarios ayudan a documentar el código. Existen dos tipos:
+
+- **De una línea**: `// Esto es un comentario`
+- **De varias líneas**:
+  
+  ```cpp
+  /* Esto es un comentario
+     de varias líneas */
+  ```
+
+## 6. Compilación y Ejecución
+Para ejecutar un programa en C++:
+1. Guarda el archivo con extensión `.cpp`.
+2. Compila usando `g++`:
+   
+   ```sh
+   g++ programa.cpp -o programa
+   ```
+3. Ejecuta:
+   
+   ```sh
+   ./programa
+   ```
+
+## Conclusión
+Un programa en C++ sigue una estructura bien definida con encabezados, espacio de nombres, `main()` y cuerpo del programa. Comprender estos elementos es esencial para escribir programas funcionales y eficientes en C++.
+

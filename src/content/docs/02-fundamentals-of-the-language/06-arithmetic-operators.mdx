@@ -1,0 +1,66 @@
+---
+title: Operadores Aritméticos
+description: A reference page in my new Starlight docs site.
+---
+
+C++ proporciona los siguientes operadores aritméticos básicos:
+
+| Operador | Descripción | Ejemplo |
+|----------|-------------|---------|
+| `+` | Suma | `a + b` |
+| `-` | Resta | `a - b` |
+| `*` | Multiplicación | `a * b` |
+| `/` | División | `a / b` |
+| `%` | Módulo (residuo) | `a % b` |
+
+
+A continuación, veremos ejemplos de uso de cada operador.
+
+### Suma y Resta
+```cpp
+#include <iostream>
+
+int main() {
+    int a = 10, b = 5;
+    std::cout << "Suma: " << (a + b) << std::endl;
+    std::cout << "Resta: " << (a - b) << std::endl;
+    return 0;
+}
+```
+Salida esperada:
+```
+Suma: 15
+Resta: 5
+```
+
+### Multiplicación y División
+```cpp
+#include <iostream>
+
+int main() {
+    int a = 10, b = 2;
+    std::cout << "Multiplicación: " << (a * b) << std::endl;
+    std::cout << "División: " << (a / b) << std::endl;
+    return 0;
+}
+```
+Salida esperada:
+```
+Multiplicación: 20
+División: 5
+```
+
+### Módulo
+```cpp
+#include <iostream>
+
+int main() {
+    int a = 10, b = 3;
+    std::cout << "Módulo: " << (a % b) << std::endl;
+    return 0;
+}
+```
+Salida esperada:
+```
+Módulo: 1
+```

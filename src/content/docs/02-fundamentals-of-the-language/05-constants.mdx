@@ -1,0 +1,54 @@
+---
+title: Constante
+description: Aprende todo sobre las variables en C++ su declaración, inicialización y formas avanzadas de uso.
+---
+
+En C++, una **constante** es un valor que no puede cambiarse después de su inicialización. Esto es útil para definir valores que deben permanecer inmutables durante la ejecución del programa, mejorando la seguridad del código y su legibilidad.
+
+## Tipos de Constantes en C++
+
+### 1. Constantes Literales
+Son valores constantes que se usan directamente en el código. Algunos ejemplos son:
+
+```cpp
+int edad = 25;       // 25 es una constante literal
+float pi = 3.1416;   // 3.1416 es una constante literal
+char letra = 'A';    // 'A' es una constante literal
+```
+
+### 2. Constantes Definidas con `const`
+El modificador `const` permite declarar variables cuyo valor no puede cambiar después de la inicialización.
+
+```cpp
+#include <iostream>
+
+int main() {
+    const double PI = 3.1416;
+    std::cout << "El valor de PI es: " << PI << std::endl;
+    // PI = 3.14;  // Esto generará un error de compilación
+    return 0;
+}
+```
+
+### 3. Constantes Definidas con `#define`
+El preprocesador de C++ permite definir constantes mediante `#define`. Sin embargo, este método es menos seguro que `const`, ya que no ofrece control de tipo.
+
+```cpp
+#define GRAVEDAD 9.81
+#include <iostream>
+
+int main() {
+    std::cout << "La gravedad es: " << GRAVEDAD << std::endl;
+    return 0;
+}
+```
+
+| Característica       | `const`                  | `#define`                  |
+|----------------------|-------------------------|----------------------------|
+| **Tipo de Dato**     | Tiene tipo de dato       | No tiene tipo de dato      |
+| **Seguridad**        | Alta (respeta el control de tipos) | Baja (no verifica tipos) |
+| **Uso en Depuración**| Permite rastreo en errores | No ofrece información en errores |
+| **Alcance**          | Respeta el alcance de variables (local/global) | Es un reemplazo de texto sin alcance específico |
+| **Uso en Clases**    | Puede usarse en clases   | No puede usarse dentro de clases directamente |
+| **Evaluación en Compilación** | No siempre (depende del contexto) | No se evalúa en compilación |
+| **Mejor Alternativa** | `constexpr` cuando sea posible | Se recomienda evitar su uso |

@@ -1,0 +1,100 @@
+---
+title: If
+description: A reference page in my new Starlight docs site.
+---
+
+El `if` es una de las estructuras de control más fundamentales en C++. Se utiliza para tomar decisiones basadas en condiciones lógicas, permitiendo que el flujo del programa se ejecute de manera diferente dependiendo de la evaluación de una expresión booleana.
+
+## Sintaxis Básica de if
+
+La estructura básica del `if` en C++ es la siguiente:
+
+```cpp
+if (condición) {
+    // Código a ejecutar si la condición es verdadera
+}
+```
+
+La `condición` es una expresión que se evalúa como `true` o `false`. Si la condición es verdadera, el bloque de código dentro de las llaves `{}` se ejecuta; en caso contrario, el programa continúa con la siguiente instrucción después del `if`.
+
+## Ejemplo Básico
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero;
+    cout << "Ingrese un número: ";
+    cin >> numero;
+    
+    if (numero > 0) {
+        cout << "El número es positivo." << endl;
+    }
+    
+    cout << "Fin del programa." << endl;
+    return 0;
+}
+```
+
+En este ejemplo, si el usuario ingresa un número mayor que cero, el mensaje "El número es positivo." se imprimirá en pantalla. Si el número es cero o negativo, el programa simplemente continuará y mostrará "Fin del programa.".
+
+## Uso de if con Expresiones Complejas
+
+Las condiciones dentro del `if` pueden ser más complejas y combinar múltiples comparaciones mediante operadores lógicos como `&&` (AND) y `||` (OR).
+
+### Ejemplo con Operadores Lógicos
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int edad;
+    cout << "Ingrese su edad: ";
+    cin >> edad;
+    
+    if (edad >= 18 && edad < 65) {
+        cout << "Usted es un adulto en edad laboral." << endl;
+    }
+    
+    cout << "Gracias por usar el programa." << endl;
+    return 0;
+}
+```
+
+Aquí, el bloque de código dentro del `if` se ejecuta solo si la edad ingresada está en el rango de 18 a 64 años, utilizando el operador `&&` para evaluar ambas condiciones.
+
+## if Anidados
+
+Es posible utilizar estructuras `if` dentro de otras estructuras `if`, lo que permite evaluar múltiples condiciones de manera jerárquica.
+
+### Ejemplo de if Anidado
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int temperatura;
+    cout << "Ingrese la temperatura en grados Celsius: ";
+    cin >> temperatura;
+    
+    if (temperatura > 30) {
+        if (temperatura > 40) {
+            cout << "Hace demasiado calor." << endl;
+        }
+        cout << "Hace calor." << endl;
+    }
+    
+    cout << "Fin de la evaluación del clima." << endl;
+    return 0;
+}
+```
+
+En este caso, si la temperatura es mayor que 30, se imprimirá "Hace calor". Si la temperatura supera los 40 grados, también se imprimirá "Hace demasiado calor".
+
+## Conclusión
+
+El `if` es una herramienta esencial en C++ para tomar decisiones basadas en condiciones. Se puede utilizar de manera simple o combinada con expresiones lógicas y anidamiento para construir lógica de control más sofisticada sin necesidad de usar `else`.
+

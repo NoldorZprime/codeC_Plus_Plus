@@ -1,0 +1,77 @@
+---
+title: Operadores lógicos 
+description: A reference page in my new Starlight docs site.
+---
+
+Los operadores lógicos son elementos fundamentales en la programación y en la lógica computacional. Se utilizan para evaluar condiciones y controlar el flujo de los programas. En este artículo, exploraremos los operadores lógicos más comunes, su sintaxis y ejemplos de uso en diferentes lenguajes de programación.
+
+## ¿Qué son los Operadores Lógicos?
+
+Los operadores lógicos permiten combinar y evaluar expresiones booleanas, es decir, expresiones que devuelven valores `true` (verdadero) o `false` (falso). Estos operadores se utilizan en estructuras de control, como condicionales (`if`, `else`) y bucles (`while`, `for`).
+
+## Tipos de Operadores Lógicos
+
+Los operadores lógicos principales son:
+
+### 1. **AND (Y)**
+   - Simbolizado como `&&` en la mayoría de los lenguajes (como C, Java, JavaScript) y `and` en Python.
+   - Devuelve `true` solo si ambas condiciones son verdaderas.
+   
+   **Ejemplo en JavaScript:**
+   ```js
+   let a = true;
+   let b = false;
+   console.log(a && b); // false
+   ```
+
+### 2. **OR (O)**
+   - Representado por `||` en la mayoría de los lenguajes y `or` en Python.
+   - Devuelve `true` si al menos una de las condiciones es verdadera.
+   
+   **Ejemplo en Python:**
+   ```python
+   a = True
+   b = False
+   print(a or b)  # True
+   ```
+
+### 3. **NOT (NO)**
+   - Simbolizado como `!` en lenguajes como C, Java y JavaScript, y `not` en Python.
+   - Invierte el valor de una expresión booleana.
+   
+   **Ejemplo en C:**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int a = 1;
+       printf("%d", !a); // 0
+       return 0;
+   }
+   ```
+
+## Otros Operadores Relacionados
+
+### 1. **XOR (O Exclusivo)**
+   - Representado en algunos lenguajes como `^` (C, Java, JavaScript).
+   - Devuelve `true` si solo una de las condiciones es verdadera.
+   
+   **Ejemplo en Java:**
+   ```java
+   boolean a = true;
+   boolean b = false;
+   System.out.println(a ^ b); // true
+   ```
+
+### 2. **Operador de Cortocircuito**
+   - En `&&` y `||`, si la primera condición es suficiente para determinar el resultado, la segunda no se evalúa.
+   - Esto optimiza el rendimiento y evita errores.
+   
+   **Ejemplo en JavaScript:**
+   ```js
+   let x = false && someFunction(); // someFunction() no se ejecuta
+   ```
+
+## Conclusión
+
+Los operadores lógicos son esenciales para la toma de decisiones en programación. Comprender su funcionamiento permite escribir código más eficiente y claro. Con una práctica constante, su uso se vuelve intuitivo y natural en cualquier lenguaje de programación.
+

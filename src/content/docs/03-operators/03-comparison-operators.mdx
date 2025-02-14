@@ -1,0 +1,123 @@
+---
+title: Operadores de comparación
+description: A reference page in my new Starlight docs site.
+---
+
+Los operadores de comparación en C++ permiten comparar dos valores y devuelven un resultado booleano (`true` o `false`). Son fundamentales en la toma de decisiones dentro de los programas, ya que se utilizan en estructuras condicionales como `if`, `while` y `for`.
+
+## 1. Lista de Operadores de Comparación
+
+C++ proporciona los siguientes operadores de comparación:
+
+| Operador | Descripción | Ejemplo |
+|----------|-------------|---------|
+| `==` | Igual a | `x == y` devuelve `true` si `x` es igual a `y` |
+| `!=` | Distinto de | `x != y` devuelve `true` si `x` es diferente de `y` |
+| `<`  | Menor que | `x < y` devuelve `true` si `x` es menor que `y` |
+| `>`  | Mayor que | `x > y` devuelve `true` si `x` es mayor que `y` |
+| `<=` | Menor o igual que | `x <= y` devuelve `true` si `x` es menor o igual a `y` |
+| `>=` | Mayor o igual que | `x >= y` devuelve `true` si `x` es mayor o igual a `y` |
+
+## 2. Uso en Estructuras de Control
+
+Estos operadores son esenciales en la toma de decisiones dentro de las estructuras de control.
+
+### 2.1 Uso en `if`
+
+```cpp
+#include <iostream>
+
+int main() {
+    int edad = 18;
+    if (edad >= 18) {
+        std::cout << "Eres mayor de edad." << std::endl;
+    } else {
+        std::cout << "Eres menor de edad." << std::endl;
+    }
+    return 0;
+}
+```
+
+### 2.2 Uso en `while`
+
+```cpp
+#include <iostream>
+
+int main() {
+    int contador = 0;
+    while (contador < 5) {
+        std::cout << "Contador: " << contador << std::endl;
+        contador++;
+    }
+    return 0;
+}
+```
+
+### 2.3 Uso en `for`
+
+```cpp
+#include <iostream>
+
+int main() {
+    for (int i = 0; i < 5; i++) {
+        std::cout << "Iteración: " << i << std::endl;
+    }
+    return 0;
+}
+```
+
+## 3. Comparación entre Tipos Diferentes
+
+En C++, es posible comparar diferentes tipos de datos, pero se deben tener en cuenta conversiones implícitas.
+
+```cpp
+#include <iostream>
+
+int main() {
+    int entero = 10;
+    double decimal = 10.0;
+    if (entero == decimal) {
+        std::cout << "Los valores son iguales." << std::endl;
+    }
+    return 0;
+}
+```
+
+## 4. Operadores de Comparación en Clases
+
+Es posible sobrecargar los operadores de comparación para trabajar con clases personalizadas.
+
+### Ejemplo de Sobrecarga de `==` y `!=`
+
+```cpp
+#include <iostream>
+
+class Punto {
+private:
+    int x, y;
+public:
+    Punto(int x, int y) : x(x), y(y) {}
+    bool operator==(const Punto& otro) const {
+        return x == otro.x && y == otro.y;
+    }
+    bool operator!=(const Punto& otro) const {
+        return !(*this == otro);
+    }
+};
+
+int main() {
+    Punto p1(2, 3), p2(2, 3), p3(4, 5);
+    if (p1 == p2) {
+        std::cout << "p1 y p2 son iguales." << std::endl;
+    }
+    if (p1 != p3) {
+        std::cout << "p1 y p3 son diferentes." << std::endl;
+    }
+    return 0;
+}
+```
+
+## Conclusión
+
+Los operadores de comparación en C++ son herramientas esenciales para la toma de decisiones y el control de flujo en los programas. Además, su sobrecarga permite ampliar su funcionalidad en clases personalizadas, lo que mejora la flexibilidad del código. Dominar su uso es clave para escribir programas eficientes y organizados.
+

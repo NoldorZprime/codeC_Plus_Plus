@@ -1,0 +1,128 @@
+---
+title: Break
+description: A reference page in my new Starlight docs site.
+---
+
+# Uso de la sentencia break en C++
+
+La sentencia `break` en C++ se utiliza para interrumpir la ejecución de un bucle o una estructura de control de flujo, terminando su ejecución de manera inmediata y continuando con la siguiente instrucción después del bloque del bucle o `switch` en el que se encuentra.
+
+## Sintaxis de break
+
+```cpp
+break;
+```
+
+## Uso en bucles
+
+La sentencia `break` se emplea comúnmente dentro de bucles como `for`, `while` y `do-while` para forzar su terminación antes de que se cumpla la condición de finalización natural.
+
+### Ejemplo con un bucle for
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 10; i++) {
+        if (i == 5) {
+            cout << "Se encontró el valor 5, saliendo del bucle." << endl;
+            break;
+        }
+        cout << "Iteración: " << i << endl;
+    }
+    return 0;
+}
+```
+
+### Explicación:
+- El bucle `for` comienza en `i = 1` y debería ejecutarse hasta `i = 10`.
+- Sin embargo, cuando `i` es igual a `5`, `break` se ejecuta y el bucle finaliza inmediatamente.
+- Se imprimen los valores del `1` al `4`, y luego se muestra el mensaje antes de salir.
+
+## Uso en bucles while
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 1;
+    while (i <= 10) {
+        if (i == 7) {
+            cout << "Se encontró el 7, terminando el bucle." << endl;
+            break;
+        }
+        cout << "Número: " << i << endl;
+        i++;
+    }
+    return 0;
+}
+```
+
+### Explicación:
+- Se inicia el `while` con `i = 1`.
+- Cuando `i` alcanza `7`, `break` se ejecuta y el bucle se detiene.
+
+## Uso en switch-case
+
+`break` se usa en `switch-case` para evitar la ejecución de múltiples casos.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int opcion;
+    cout << "Ingrese una opción (1-3): ";
+    cin >> opcion;
+
+    switch (opcion) {
+        case 1:
+            cout << "Opción 1 seleccionada." << endl;
+            break;
+        case 2:
+            cout << "Opción 2 seleccionada." << endl;
+            break;
+        case 3:
+            cout << "Opción 3 seleccionada." << endl;
+            break;
+        default:
+            cout << "Opción no válida." << endl;
+    }
+    return 0;
+}
+```
+
+### Explicación:
+- Sin `break`, los casos continuarían ejecutándose en cascada.
+- `break` asegura que solo se ejecute el código del caso correspondiente.
+
+## Diferencia entre break y continue
+
+- `break`: Termina por completo la ejecución del bucle o `switch`.
+- `continue`: Salta la iteración actual y pasa a la siguiente.
+
+Ejemplo con `continue`:
+
+```cpp
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        continue; // Salta la iteración cuando i es 3
+    }
+    cout << "Número: " << i << endl;
+}
+```
+
+### Salida:
+```
+Número: 1
+Número: 2
+Número: 4
+Número: 5
+```
+
+## Conclusión
+
+La sentencia `break` en C++ es una herramienta clave para controlar el flujo de ejecución en bucles y estructuras de selección como `switch-case`. Se debe usar con precaución para evitar terminaciones inesperadas del programa.
+

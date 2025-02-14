@@ -1,0 +1,112 @@
+---
+title: Operadores de asignación
+description: A reference page in my new Starlight docs site.
+---
+
+Los operadores de asignación en C++ permiten asignar valores a variables y modificar su contenido de manera eficiente. Se utilizan ampliamente en el desarrollo de programas y pueden combinarse con otros operadores para realizar asignaciones y operaciones simultáneamente.
+
+## 1. Operador de Asignación Básico (=)
+
+El operador de asignación `=` se usa para asignar un valor a una variable:
+
+```cpp
+int x = 10;  // Asigna el valor 10 a la variable x
+```
+
+Este operador toma el valor de la derecha y lo almacena en la variable de la izquierda.
+
+## 2. Operadores de Asignación Compuestos
+
+C++ ofrece una serie de operadores de asignación compuestos que combinan la asignación con una operación aritmética o bit a bit:
+
+| Operador  | Descripción | Ejemplo |
+|-----------|-------------|---------|
+| `+=` | Suma y asigna | `x += 5;` equivale a `x = x + 5;` |
+| `-=` | Resta y asigna | `x -= 3;` equivale a `x = x - 3;` |
+| `*=` | Multiplica y asigna | `x *= 2;` equivale a `x = x * 2;` |
+| `/=` | Divide y asigna | `x /= 4;` equivale a `x = x / 4;` |
+| `%=` | Módulo y asigna | `x %= 3;` equivale a `x = x % 3;` |
+| `&=` | AND bit a bit y asigna | `x &= 1;` equivale a `x = x & 1;` |
+| `|=` | OR bit a bit y asigna | `x |= 2;` equivale a `x = x | 2;` |
+| `^=` | XOR bit a bit y asigna | `x ^= 3;` equivale a `x = x ^ 3;` |
+| `<<=` | Desplazamiento a la izquierda y asigna | `x <<= 1;` equivale a `x = x << 1;` |
+| `>>=` | Desplazamiento a la derecha y asigna | `x >>= 2;` equivale a `x = x >> 2;` |
+
+### Ejemplo de Uso
+
+```cpp
+#include <iostream>
+
+int main() {
+    int x = 10;
+    x += 5;  // Ahora x es 15
+    x *= 2;  // Ahora x es 30
+    x >>= 1; // Ahora x es 15 (desplazamiento de bits a la derecha)
+    
+    std::cout << "El valor final de x es: " << x << std::endl;
+    return 0;
+}
+```
+
+## 3. Asignación con Punteros
+
+Cuando se trabaja con punteros, la asignación permite cambiar la dirección de memoria almacenada en el puntero:
+
+```cpp
+int a = 10, b = 20;
+int* p = &a;  // p apunta a a
+p = &b;       // Ahora p apunta a b
+```
+
+## 4. Asignación en Clases y Sobrecarga del Operador `=`
+
+En C++, las clases pueden definir su propio comportamiento del operador de asignación `=` mediante la sobrecarga de operadores. Esto es útil para gestionar correctamente la asignación de objetos dinámicos.
+
+### Ejemplo de Sobrecarga del Operador de Asignación
+
+```cpp
+#include <iostream>
+#include <cstring>
+
+class Cadena {
+private:
+    char* str;
+public:
+    Cadena(const char* s) {
+        str = new char[strlen(s) + 1];
+        strcpy(str, s);
+    }
+    
+    // Destructor
+    ~Cadena() {
+        delete[] str;
+    }
+    
+    // Sobrecarga del operador de asignación
+    Cadena& operator=(const Cadena& otra) {
+        if (this != &otra) { // Evitar autoasignación
+            delete[] str;
+            str = new char[strlen(otra.str) + 1];
+            strcpy(str, otra.str);
+        }
+        return *this;
+    }
+    
+    void mostrar() {
+        std::cout << str << std::endl;
+    }
+};
+
+int main() {
+    Cadena c1("Hola");
+    Cadena c2("Mundo");
+    c1 = c2;  // Usa el operador de asignación sobrecargado
+    c1.mostrar();
+    return 0;
+}
+```
+
+## Conclusión
+
+Los operadores de asignación en C++ son esenciales para la manipulación eficiente de datos. Desde la asignación básica hasta la sobrecarga de operadores en clases, proporcionan un mecanismo poderoso para trabajar con variables y estructuras de datos de manera flexible y eficiente. Conocer su funcionamiento ayuda a escribir código más claro y eficiente.
+

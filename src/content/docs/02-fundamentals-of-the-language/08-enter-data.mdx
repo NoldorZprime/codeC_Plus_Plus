@@ -1,0 +1,127 @@
+---
+title: Ingresar datos
+description: A reference page in my new Starlight docs site.
+---
+
+En C++, la entrada de datos desde el teclado es una de las operaciones más fundamentales en la interacción con el usuario. Existen múltiples formas de capturar información desde la consola, cada una con características y aplicaciones específicas. En este artículo, exploraremos todas las formas disponibles para ingresar datos en C++.
+
+## Uso de `std::cin`
+El método más común para leer datos en C++ es mediante `std::cin` (de la biblioteca `<iostream>`), que permite capturar datos del teclado.
+
+### Entrada de un solo valor
+El operador `>>` (extracción) permite capturar un valor de un tipo específico desde la consola.
+
+**Ejemplo**
+
+```cpp
+#include <iostream>
+
+int main() {
+    int numero;
+    std::cout << "Ingrese un número entero: ";
+    std::cin >> numero;
+    std::cout << "El número ingresado es: " << numero << std::endl;
+    return 0;
+}
+```
+🔹 **Nota:** `std::cin` ignora los espacios en blanco y solo captura el primer valor válido ingresado.
+
+### Entrada de múltiples valores en una sola línea
+Es posible ingresar varios valores seguidos en una misma línea, separados por espacios.
+
+**Ejemplo**
+
+```cpp
+#include <iostream>
+
+int main() {
+    int a, b;
+    std::cout << "Ingrese dos números separados por espacio: ";
+    std::cin >> a >> b;
+    std::cout << "Los números ingresados son: " << a << " y " << b << std::endl;
+    return 0;
+}
+```
+📌 **Importante:** `std::cin` almacena los valores en orden según el tipo de dato definido.
+
+## Uso de `std::getline()` 
+Cuando necesitamos capturar una línea completa con espacios, `std::cin` no es suficiente, ya que solo toma el primer valor antes del primer espacio. Para esto, utilizamos `std::getline()`.
+
+**Ejemplo**
+
+```cpp
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string nombre;
+    std::cout << "Ingrese su nombre completo: ";
+    std::getline(std::cin, nombre);
+    std::cout << "Hola, " << nombre << "!" << std::endl;
+    return 0;
+}
+```
+🔹 **Nota:** `std::getline()` captura todo el texto hasta presionar "Enter".
+
+### Solucionar problemas con `std::getline()` después de `std::cin`
+Si usamos `std::cin` antes de `std::getline()`, a veces puede ocurrir que `std::getline()` lea un salto de línea `\n` residual. Para evitar esto, podemos usar `std::cin.ignore()`.
+
+**Ejemplo:**
+
+```cpp
+#include <iostream>
+#include <string>
+
+int main() {
+    int edad;
+    std::string nombre;
+
+    std::cout << "Ingrese su edad: ";
+    std::cin >> edad;
+    std::cin.ignore();  // Limpiamos el buffer de entrada
+
+    std::cout << "Ingrese su nombre completo: ";
+    std::getline(std::cin, nombre);
+
+    std::cout << "Nombre: " << nombre << ", Edad: " << edad << std::endl;
+    return 0;
+}
+```
+📌 **Importante:** `std::cin.ignore()` elimina el carácter `\n` que queda en el buffer.
+
+## Uso de `std::get()`
+Si necesitamos leer un solo carácter, podemos utilizar `std::cin.get()`.
+
+**Ejemplo:**
+
+```cpp
+#include <iostream>
+
+int main() {
+    char letra;
+    std::cout << "Ingrese un solo carácter: ";
+    std::cin.get(letra);
+    std::cout << "Carácter ingresado: " << letra << std::endl;
+    return 0;
+}
+```
+🔹 **Nota:** `std::cin.get()` también captura espacios en blanco y saltos de línea, a diferencia de `std::cin >>`.
+
+## Uso de `std::cin.read()`
+Cuando queremos leer una cantidad específica de caracteres, podemos usar `std::cin.read()`.
+
+**Ejemplo:**
+
+```cpp
+#include <iostream>
+
+int main() {
+    char buffer[6];  // Un espacio extra para el carácter nulo '\0'
+    std::cout << "Ingrese 5 caracteres: ";
+    std::cin.read(buffer, 5);
+    buffer[5] = '\0'; // Asegurar que la cadena termine correctamente
+    std::cout << "Texto ingresado: " << buffer << std::endl;
+    return 0;
+}
+```
+📌 **Importante:** `std::cin.read()` permite capturar espacios y caracteres especiales.
