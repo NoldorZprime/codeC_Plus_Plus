@@ -15,4 +15,8 @@ export const sidebar = [
         label: "Estructura de control",
         autogenerate: { directory: "04-control-structure" },
     },
+    {
+        label: "Arrays y Matrices",
+        autogenerate: { directory: "05-arrays-and-matrices" },
+    },
 ];

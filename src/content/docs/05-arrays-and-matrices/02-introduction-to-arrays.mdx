@@ -1,0 +1,119 @@
+---
+title: Introducción a los Arrays en C++
+description: A reference page in my new Starlight docs site.
+---
+
+# Introducción a los Arrays en C++
+
+Los arrays son una de las estructuras de datos fundamentales en C++, permitiendo almacenar y manipular múltiples elementos del mismo tipo de manera eficiente. En este artículo, exploraremos a fondo los arrays en C++, desde su definición hasta su almacenamiento en memoria.
+
+## Definición y Características de un Array en C++
+
+Un array en C++ es una colección de elementos del mismo tipo almacenados en ubicaciones contiguas de memoria. Los arrays proporcionan una forma eficiente de manejar grandes cantidades de datos con acceso directo a través de índices.
+
+### Características principales:
+- Contiene elementos del mismo tipo de dato.
+- Su tamaño es fijo al momento de la declaración.
+- Se accede a los elementos mediante índices, comenzando desde 0.
+- Se almacena en una región contigua de memoria.
+- Puede ser unidimensional o multidimensional.
+
+## Declaración y Tamaño Fijo de un Array
+
+En C++, un array se declara especificando el tipo de dato de sus elementos y el número fijo de posiciones que tendrá. Ejemplo:
+
+```cpp
+int numeros[5]; // Array de 5 enteros
+```
+
+El tamaño del array debe ser una constante en tiempo de compilación, lo que significa que no puede modificarse dinámicamente después de la declaración.
+
+## Asignación e Inicialización de Valores en un Array
+
+Los valores de un array pueden asignarse de diferentes maneras:
+
+### 1. Asignación manual por índice
+```cpp
+int numeros[5];
+numeros[0] = 10;
+numeros[1] = 20;
+numeros[2] = 30;
+numeros[3] = 40;
+numeros[4] = 50;
+```
+
+### 2. Inicialización en la declaración
+```cpp
+int numeros[5] = {10, 20, 30, 40, 50};
+```
+
+### 3. Inicialización sin especificar el tamaño
+```cpp
+int numeros[] = {10, 20, 30, 40, 50};
+```
+
+Cuando no se especifica el tamaño, el compilador lo determina automáticamente según la cantidad de elementos en la lista de inicialización.
+
+## Acceso a Elementos Mediante Índices
+
+Para acceder a los elementos de un array, se usa la notación de corchetes `[]`, indicando el índice del elemento deseado:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numeros[5] = {10, 20, 30, 40, 50};
+    cout << "El tercer elemento es: " << numeros[2] << endl; // Salida: 30
+    return 0;
+}
+```
+
+⚠ **Precaución**: Acceder a un índice fuera del rango del array puede causar comportamiento indefinido.
+
+## Arrays de Diferentes Tipos de Datos
+
+Los arrays pueden ser de diferentes tipos de datos:
+
+```cpp
+char caracteres[4] = {'A', 'B', 'C', 'D'};
+float decimales[3] = {1.5, 2.75, 3.14};
+double grandes[2] = {12345.6789, 98765.4321};
+bool banderas[2] = {true, false};
+```
+
+## Almacenamiento en Memoria de los Arrays
+
+Los elementos de un array se almacenan en posiciones contiguas de memoria. Por ejemplo, si declaramos:
+
+```cpp
+int numeros[3] = {10, 20, 30};
+```
+
+Si `numeros` inicia en la dirección de memoria `0x100`, los valores pueden almacenarse así (suponiendo que un `int` ocupa 4 bytes en memoria):
+
+| Índice | Valor | Dirección de Memoria |
+|--------|-------|---------------------|
+| 0      | 10    | 0x100               |
+| 1      | 20    | 0x104               |
+| 2      | 30    | 0x108               |
+
+Podemos verificar las direcciones de memoria en C++ con `&`:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numeros[3] = {10, 20, 30};
+    cout << "Dirección de numeros[0]: " << &numeros[0] << endl;
+    cout << "Dirección de numeros[1]: " << &numeros[1] << endl;
+    cout << "Dirección de numeros[2]: " << &numeros[2] << endl;
+    return 0;
+}
+```
+
+### Conclusión
+
+Los arrays en C++ son estructuras fundamentales que permiten manejar colecciones de datos de manera eficiente. Conocer su declaración, inicialización, acceso y almacenamiento en memoria es esencial para aprovechar al máximo su potencial en la programación.
+
