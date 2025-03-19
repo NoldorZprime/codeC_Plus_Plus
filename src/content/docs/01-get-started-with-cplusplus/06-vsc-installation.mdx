@@ -1,4 +1,129 @@
 ---
-title: Instalación de VSC
+title: Instalación de CodeLite
 description: Aprende a programar en C++ de forma gratuita con CodeC++ 🚀
 ---
+
+## ¿Qué es CodeLite?
+
+CodeLite es un entorno de desarrollo integrado (IDE) gratuito y de código abierto, diseñado principalmente para el desarrollo en C, C++ y Node.js. Ofrece compatibilidad con diversas plataformas, incluyendo Windows, Linux y macOS.
+
+## Instalación en Windows
+
+### Paso 1: Descargar CodeLite
+
+1. Visita la página oficial de CodeLite: [https://codelite.org](https://codelite.org)
+2. Dirígete a la sección de descargas y selecciona la versión más reciente para Windows.
+3. Descarga el instalador en formato `.exe`.
+
+### Paso 2: Instalar CodeLite
+
+1. Ejecuta el archivo descargado (`codelite-setup.exe`).
+2. Sigue las instrucciones del asistente de instalación.
+
+![Texto alternativo](../../../assets/instalacion/instalacion-1.png)
+Aseptar los terminos.
+
+![Texto alternativo](../../../assets/instalacion/instalacion-2.png)
+
+![Texto alternativo](../../../assets/instalacion/instalacion-3.png)
+
+![Texto alternativo](../../../assets/instalacion/instalacion-4.png)
+Marcar las dos opciones.
+
+![Texto alternativo](../../../assets/instalacion/instalacion-5.png)
+
+![Texto alternativo](../../../assets/instalacion/instalacion-6.png)
+
+
+## Configuración inicial
+Vamos a ejecutar CodeLite tal como se muestra en las imagenes.
+![Texto alternativo](../../../assets/configuracion/confi-1.png)
+![Texto alternativo](../../../assets/configuracion/confi-2.png)
+
+- Podemos scanear para que encuentre el compilador de C/C++ o simplemente omitirlo.
+- Normalmente en Windows no lo va a detectar como se muestra a continuación. 
+![Texto alternativo](../../../assets/configuracion/confi-3.png)
+
+- Aqui vemos como no lo detecto el compilador. 
+![Texto alternativo](../../../assets/configuracion/confi-4.png)
+![Texto alternativo](../../../assets/configuracion/confi-5.png)
+
+- En este paso vamos a seleccionar el tema del IDE. 
+![Texto alternativo](../../../assets/configuracion/confi-6.png)
+![Texto alternativo](../../../assets/configuracion/confi-7.png)
+
+- Ahora no vamos a dirigirnos a `Settings` > `Build Settings`
+![Texto alternativo](../../../assets/configuracion/confi-8.png)
+
+- Vamos a ubicar el compilador de C/C++ y no dirigimos a la carpeta bin `C:\mingw64\bin`
+![Texto alternativo](../../../assets/configuracion/confi-9.png)
+
+- Seleccionamos la carpeta `bin`
+![Texto alternativo](../../../assets/configuracion/confi-10.png)
+
+- Este es el nombre por defecto.
+![Texto alternativo](../../../assets/configuracion/confi-11.png)
+
+- Podemos cambiar el nombre a `MinGW`
+![Texto alternativo](../../../assets/configuracion/confi-12.png)
+
+- Y finalizamos con la configuracion
+![Texto alternativo](../../../assets/configuracion/confi-13.png)
+
+### Crear un nuevo proyecto en C++
+
+- Nos vamos a dirigirnos a `File`> `New`> `New Workspace`
+- Seleccionamos `C++`
+![Texto alternativo](../../../assets/proyecto/pro-1.png)
+
+- 1. Es la ruta donde se va a crear todos los proyectos en este caso se va crear en `C:\User\demo\Workspace`
+- 2. El nombre donde vamos a trabajar es `ejemplo1`
+![Texto alternativo](../../../assets/proyecto/pro-2.png)
+
+- Ahora vamos a crear un nuevo proyecto
+![Texto alternativo](../../../assets/proyecto/pro-3.png)
+
+- 1. Nombre del proyecto
+- 2. Vamos a configurar tal y como se ve en la imagen
+![Texto alternativo](../../../assets/proyecto/pro-4.png)
+
+- Dentro de la carpeta `src` esta el archivo `main.cpp`
+- Vamos a presionar doble clik y vamos a editar el código
+![Texto alternativo](../../../assets/proyecto/pro-5.png)
+
+- Editando el código guardamos con `Ctrl+S`
+![Texto alternativo](../../../assets/proyecto/pro-6.png)
+
+- 1. Nos aseguramos seleccionar el proyecto tal como se ve en la imagen.
+- 2. Vamos a seleccionar el simbolo de una llave.
+![Texto alternativo](../../../assets/proyecto/pro-7.png)
+
+- Vamos a configurar en `General`
+![Texto alternativo](../../../assets/proyecto/pro-8.png)
+
+- Vamos a modificar conlo siguiente `$(ProjectPath)` asegurese de que este correctamente escrito.
+![Texto alternativo](../../../assets/proyecto/pro-9.png)
+
+- Vamos a configurar en el `Compiler`
+![Texto alternativo](../../../assets/proyecto/pro-10.png)
+![Texto alternativo](../../../assets/proyecto/pro-11.png)
+![Texto alternativo](../../../assets/proyecto/pro-12.png)
+![Texto alternativo](../../../assets/proyecto/pro-13.png)
+
+- Vamos a configurar en el `Linker`
+![Texto alternativo](../../../assets/proyecto/pro-14.png)
+
+- Vamos a Compilar
+![Texto alternativo](../../../assets/proyecto/pro-15.png)
+![Texto alternativo](../../../assets/proyecto/pro-16.png)
+
+- Y ejecutamos el programa
+![Texto alternativo](../../../assets/proyecto/pro-17.png)
+![Texto alternativo](../../../assets/proyecto/pro-18.png)
+![Texto alternativo](../../../assets/proyecto/pro-19.png)
+
+
+## Conclusión
+
+CodeLite es un IDE ligero y potente para programadores de C++, C y Node.js. Su instalación es sencilla en cualquier sistema operativo y su configuración inicial es rápida. Con esta guía, ya puedes comenzar a programar con CodeLite de manera eficiente.
+
